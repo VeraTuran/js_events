@@ -21,4 +21,15 @@ menuCollapse = () => {
 
 hamburger.addEventListener("click", menuCollapse);
 
-// 3 : 
+// 3 : make text of the first card red on clicking edit
+
+let entireCard = document.getElementsByClassName("card mb-4 box-shadow")[0];
+let editButton = document.getElementsByClassName(
+  "btn btn-sm btn-outline-secondary"
+)[0];
+
+redEdit = () => {
+  entireCard.style.color = "red";
+};
+
+editButton.addEventListener("click", redEdit);
