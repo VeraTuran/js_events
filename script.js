@@ -23,13 +23,55 @@ hamburger.addEventListener("click", menuCollapse);
 
 // 3 : make text of the first card red on clicking edit
 
-let entireCard = document.getElementsByClassName("card mb-4 box-shadow")[0];
-let editButton = document.getElementsByClassName(
+let firstEntireCard = document.getElementsByClassName(
+  "card mb-4 box-shadow"
+)[0];
+let firstEditButton = document.getElementsByClassName(
   "btn btn-sm btn-outline-secondary"
 )[0];
 
 redEdit = () => {
-  entireCard.style.color = "red";
+  firstEntireCard.style.color = "red";
 };
 
-editButton.addEventListener("click", redEdit);
+firstEditButton.addEventListener("click", redEdit);
+
+// 4 : make text on the second card green on clicking edit
+
+let secondEntireCard = document.getElementsByClassName(
+  "card mb-4 box-shadow"
+)[1];
+let secondEditButton = document.getElementsByClassName(
+  "btn btn-sm btn-outline-secondary"
+)[1];
+
+greenEdit = () => {
+  if (secondEntireCard.style.color === "green") {
+    secondEntireCard.style.color = "";
+  } else secondEntireCard.style.color = "green";
+};
+
+secondEditButton.addEventListener("click", greenEdit);
+
+// 5 : deactivate a link tag (bootstrap)
+
+let navbar = document.getElementsByClassName("navbar")[0];
+let cdnLink = document.getElementsByTagName("link")[0];
+
+toggleCdn = () => {
+  if (
+    cdnLink.href ===
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  ) {
+    cdnLink.href = "";
+  } else
+    cdnLink.href =
+      "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+};
+
+navbar.addEventListener("dblclick", toggleCdn);
+
+// 6 : reduce image size and hide text
+// 7 : shuffle cards forwards
+// 8 : shuffle cards backwards
+// 9 : *BONUS* key shenanigans
