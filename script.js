@@ -55,21 +55,32 @@ secondEditButton.addEventListener("click", greenEdit);
 
 // 5 : deactivate a link tag (bootstrap)
 
+// let navbar = document.getElementsByClassName("navbar")[0];
+// let cdnLink = document.getElementsByTagName("link")[0];
+
+// toggleCdn = () => {
+//   if (
+//     cdnLink.href ===
+//     "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+//   ) {
+//     cdnLink.href = "";
+//   } else
+//     cdnLink.href =
+//       "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+// };
+
+// navbar.addEventListener("dblclick", toggleCdn);
+
 let navbar = document.getElementsByClassName("navbar")[0];
-let cdnLink = document.getElementsByTagName("link")[0];
+let styleSheet = document.styleSheets[0];
 
-toggleCdn = () => {
-  if (
-    cdnLink.href ===
-    "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  ) {
-    cdnLink.href = "";
-  } else
-    cdnLink.href =
-      "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
-};
+function toggleStyleSheet() {
+  if (styleSheet.disabled === true) {
+    styleSheet.disabled = false;
+  } else styleSheet.disabled = true;
+}
 
-navbar.addEventListener("dblclick", toggleCdn);
+navbar.addEventListener("dblclick", toggleStyleSheet);
 
 // 6 : reduce image size and hide text
 // 7 : shuffle cards forwards
